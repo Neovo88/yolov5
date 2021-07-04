@@ -1,0 +1,7 @@
+
+train: ../Dataset/train/images
+val: ../Dataset/valid/images
+
+nc: 1
+names: ['WF']
+
