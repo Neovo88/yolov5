@@ -23,11 +23,11 @@ def mask_image():
     file = request.files['image'].read()
     npimg = np.fromstring(file, np.uint8)
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
-    cv2.imwrite("../data/images/image.png",img)
+    cv2.imwrite("images/image.png",img)
 
-    run(weights="../yolov5s.pt", source="../data/images/",project="../results", name="",exist_ok=True)
+    run(weights="yolov5s.pt", source="images",project="results", name="",exist_ok=True)
 
-    imageResults = cv2.imread("../results/image.png",cv2.IMREAD_COLOR)
+    imageResults = cv2.imread("results/image.png",cv2.IMREAD_COLOR)
     is_sucess, bufImg = cv2.imencode(".png",imageResults)
     bytesImage = bufImg.tobytes()
     img_base64 = base64.b64encode(bytesImage)
