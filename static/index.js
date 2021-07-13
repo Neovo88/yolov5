@@ -41,8 +41,6 @@ function readUrl(input){
 		    reader.onload = function(e){
 			console.log(e)
 			imagebox.attr('src',e.target.result); 
-			imagebox.height(500);
-			imagebox.width(800);
 			}
 			reader.readAsDataURL(input.files[0]);
 			readytosend = true

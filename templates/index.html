@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="../static/index.js"></script>
+    <link rel="stylesheet" href="../static/index.css">
     <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -15,22 +16,22 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">YOLOv5 White Flye Detector</span>
+          <span class="navbar-brand mb-0 h1">YOLOv5 Whitefly Detector</span>
         </div>
       </nav>
 
-      <div>
+      <div class="container">
         <form>
-          <div class="mb-3">
-            <label for="imageInputLabel" class="form-label">File Name</label>
+            <label for="imageInputLabel" class="form-label">File Name</label></br>
             <input id="imageinput" type="file" name="image" onchange=readUrl(this)>
-          </div>
         </form>
-        <button class="btn btn-primary" name="send" id="sendbutton">Send</button> 
+        <button class="btn btn-primary" name="send" id="sendbutton">Send</button>
       </div>
 
       <div class="view_img">
         <span><img id="imagebox" class="rounded mx-auto d-block" src=""></span>
-      </div>
+      </div> 
+
+      
 </body>
 </html> 
