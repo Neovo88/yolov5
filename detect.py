@@ -8,6 +8,7 @@ import argparse
 import sys
 import time
 from pathlib import Path
+from typing import Tuple
 
 import cv2
 import torch
@@ -20,7 +21,7 @@ from models.experimental import attempt_load
 from utils.datasets import LoadStreams, LoadImages
 from utils.general import check_img_size, check_requirements, check_imshow, colorstr, non_max_suppression, \
     apply_classifier, scale_coords, xyxy2xywh, strip_optimizer, set_logging, increment_path, save_one_box
-from utils.plots import colors, plot_one_box
+from utils.plots import Colors, colors, plot_one_box
 from utils.torch_utils import select_device, load_classifier, time_synchronized
 
 
@@ -140,6 +141,8 @@ def run(weights='yolov5s.pt',  # model.pt path(s)
 
                     if save_img or save_crop or view_img:  # Add bbox to image
                         c = int(cls)  # integer class
+                        #colors = [[random.randint(0, 255) for _ in range(3)] for _ in range(2)]
+                        #colors = [[255,0,0],[153,255,51]]
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
                         plot_one_box(xyxy, im0, label=label, color=colors(c, True), line_thickness=line_thickness)
                         if save_crop:

@@ -23,9 +23,9 @@ def mask_image():
     file = request.files['image'].read()
     npimg = np.fromstring(file, np.uint8)
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
+    print(img.shape)
     cv2.imwrite("images/image.png",img)
-
-    run(weights="yolov5s.pt", source="images",project="results", name="",exist_ok=True)
+    run(weights="best.pt",imgsz=660, source="images",project="results", name="",exist_ok=True, hide_conf=True,hide_labels=True, line_thickness=1)
 
     imageResults = cv2.imread("results/image.png",cv2.IMREAD_COLOR)
     is_sucess, bufImg = cv2.imencode(".png",imageResults)

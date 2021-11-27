@@ -36,7 +36,8 @@ function readUrl(input){
 	console.log(input.files)
 	if(input.files && input.files[0]){
 		filename = input.files[0].name.split(".")
-		if(filename[1] == "jpg" || filename == "png"){
+		console.log(filename)
+		if(filename[1] == "jpg" || filename[1] == "png"){
 			let reader = new FileReader();
 		    reader.onload = function(e){
 			console.log(e)
